@@ -1,6 +1,7 @@
 package com.samsung.samsung.domain.apartment.controller;
 
 import com.samsung.samsung.domain.apartment.dto.ApartmentDto;
+import com.samsung.samsung.domain.apartment.entity.Apartment;
 import com.samsung.samsung.domain.apartment.service.ApartmentService;
 import com.samsung.samsung.domain.product.dto.ProductDto;
 import com.samsung.samsung.global.response.BaseResponse;
@@ -23,9 +24,8 @@ public class ApartmentController {
         return BaseResponse.onSuccess(apartmentList);
     }
     @GetMapping("/{apartment-Id}/{goal-Year}")
-    public BaseResponse<List<ApartmentDto.Response>> getMyHomeResult(@PathVariable("apartment-Id") Long id , @PathVariable("goal-Year") int goalYear){
-        List<ApartmentDto.Response> apartmentList = apartmentService.findByAll();
-        return BaseResponse.onSuccess(apartmentList);
+    public BaseResponse<Long> getMyHomeResult(@PathVariable("apartment-Id") Long id , @PathVariable("goal-Year") int goalYear){
+        return BaseResponse.onSuccess(apartmentService.findByHome(id , goalYear));
     }
 //TODO
 // 1) type별 product 주는걸로 API 변경

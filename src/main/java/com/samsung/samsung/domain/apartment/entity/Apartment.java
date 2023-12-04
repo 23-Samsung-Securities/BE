@@ -24,5 +24,8 @@ public class Apartment {
     private String address;
     @Column
     private String apartmentName;
+    @Column
+    private String price;
+
 
 }
