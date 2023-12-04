@@ -37,6 +37,7 @@ public class ApartmentDto {
     @NoArgsConstructor
     @Data
     public static class Response{
+        private Long apartmentId;
         private Double longitude;
 
         private Double latitude;
@@ -46,6 +47,7 @@ public class ApartmentDto {
         private String apartmentName;
 
         public Response(Apartment apartment) {
+            this.apartmentId=apartment.getApartmentId();
             this.longitude = apartment.getLongitude();
             this.latitude = apartment.getLatitude();
             this.address = apartment.getAddress();
