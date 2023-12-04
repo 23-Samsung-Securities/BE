@@ -1,7 +1,8 @@
 package com.samsung.samsung.global.exception;
 
-import com.example.hicardi.global.exception.base.BaseException;
-import com.example.hicardi.global.exception.base.ErrorCode;
+
+import com.samsung.samsung.global.response.BaseException;
+import com.samsung.samsung.global.response.ErrorCode;
 import lombok.Getter;
 
 
