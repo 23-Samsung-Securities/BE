@@ -33,13 +33,6 @@ public class ProductDto {
 
         private String roi;
 
-        public Product toEntity() {
-            return Product.builder()
-                    .price(price)
-                    .roi(roi)
-                    .build();
-        }
-
         public Response(Product product) {
             this.price= product.getPrice();
             this.roi= product.getRoi();
