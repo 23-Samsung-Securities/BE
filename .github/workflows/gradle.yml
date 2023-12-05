@@ -55,9 +55,9 @@ jobs:
         username: ec2-user
         key: ${{ secrets.PRIVATE_KEY }} 
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/hackathon:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/samsung:latest
           docker stop $(docker ps -a -q)
-          docker run -d --log-driver=syslog -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod ${{ secrets.DOCKER_USERNAME }}/hackathon:latest
+          docker run -d --log-driver=syslog -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod ${{ secrets.DOCKER_USERNAME }}/samsung:latest
           docker rm $(docker ps --filter 'status=exited' -a -q)
           docker image prune -a -f
    
