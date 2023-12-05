@@ -19,4 +19,10 @@ public class ProductService {
                 .map(ProductDto.Response::new)
                 .collect(Collectors.toList());
     }
+    public List<ProductDto.Response> findByType(String type) {
+        List<Product> products = productRepository.findByType(type);
+        return products.stream()
+                .map(ProductDto.Response::new)
+                .collect(Collectors.toList());
+    }
 }

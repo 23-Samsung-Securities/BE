@@ -27,6 +27,6 @@ public class ApartmentService {
         Apartment apartment = apartmentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 아파트가 존재하지 않습니다."));
         long apartmentPrice = Long.parseLong(apartment.getPrice());
         long result = (apartmentPrice - 200000000) / (400 - 80);
-        return result;
+        return result/goalYear;
     }
 }

@@ -23,4 +23,6 @@ public class Product {
 
     private String roi;
 
+    private String type;
+
 }
