@@ -46,12 +46,15 @@ public class ApartmentDto {
 
         private String apartmentName;
 
+        private String price;
+
         public Response(Apartment apartment) {
             this.apartmentId=apartment.getApartmentId();
             this.longitude = apartment.getLongitude();
             this.latitude = apartment.getLatitude();
             this.address = apartment.getAddress();
             this.apartmentName = apartment.getApartmentName();
+            this.price = apartment.getPrice();
         }
     }
 }
