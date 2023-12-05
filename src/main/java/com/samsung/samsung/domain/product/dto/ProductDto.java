@@ -12,7 +12,7 @@ public class ProductDto {
     public static class Request{
         private String price;
 
-        private String roi;
+        private Double roi;
 
         public Product toEntity() {
             return Product.builder()
@@ -32,7 +32,7 @@ public class ProductDto {
         private String name;
         private String price;
 
-        private String roi;
+        private Double roi;
 
         public Response(Product product) {
             this.name= product.getName();

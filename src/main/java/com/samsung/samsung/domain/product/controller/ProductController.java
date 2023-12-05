@@ -26,4 +26,9 @@ public class ProductController {
         List<ProductDto.Response> productList = productService.findByType(type);
         return BaseResponse.onSuccess(productList);
     }
+    @GetMapping("/list/{type}/{roi}")
+    public BaseResponse<List<ProductDto.Response>> getProductRoiList(@PathVariable("type") String type,@PathVariable("roi") Double roi){
+        List<ProductDto.Response> productList = productService.findByRoiLessThan(type,roi);
+        return BaseResponse.onSuccess(productList);
+    }
 }

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product,Long> {
     List<Product> findByType(String type);
+    List<Product> findByRoiLessThanAndType(double value,String type);
 }

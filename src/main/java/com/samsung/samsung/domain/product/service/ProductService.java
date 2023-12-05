@@ -25,4 +25,10 @@ public class ProductService {
                 .map(ProductDto.Response::new)
                 .collect(Collectors.toList());
     }
+    public List<ProductDto.Response> findByRoiLessThan(String type, double value){
+        List<Product> products = productRepository.findByRoiLessThanAndType(value,type);
+        return products.stream()
+                .map(ProductDto.Response::new)
+                .collect(Collectors.toList());
+    }
 }
