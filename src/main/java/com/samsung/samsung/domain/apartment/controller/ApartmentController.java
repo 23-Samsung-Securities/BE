@@ -24,7 +24,7 @@ public class ApartmentController {
         return BaseResponse.onSuccess(apartmentList);
     }
     @GetMapping("/{apartment-Id}/{goal-Year}")
-    public BaseResponse<Long> getMyHomeResult(@PathVariable("apartment-Id") Long id , @PathVariable("goal-Year") int goalYear){
+    public BaseResponse<Double> getMyHomeResult(@PathVariable("apartment-Id") Long id , @PathVariable("goal-Year") int goalYear){
         return BaseResponse.onSuccess(apartmentService.findByHome(id , goalYear));
     }
 //TODO
