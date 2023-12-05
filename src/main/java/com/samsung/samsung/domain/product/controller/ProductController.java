@@ -23,7 +23,7 @@ public class ProductController {
     }
     @GetMapping("/list/{type}")
     public BaseResponse<List<ProductDto.Response>> getProductLikeList(@PathVariable("type") String type){
-        List<ProductDto.Response> productList = productService.findByAll();
+        List<ProductDto.Response> productList = productService.findByType(type);
         return BaseResponse.onSuccess(productList);
     }
 }
