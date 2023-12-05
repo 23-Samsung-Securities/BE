@@ -29,11 +29,13 @@ public class ProductDto {
     @NoArgsConstructor
     @Data
     public static class Response{
+        private String name;
         private String price;
 
         private String roi;
 
         public Response(Product product) {
+            this.name= product.getName();
             this.price= product.getPrice();
             this.roi= product.getRoi();
         }
