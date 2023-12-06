@@ -31,9 +31,10 @@ jobs:
         
     - name: make application.yml
       run: |
-        cd ./src/main/resources
-        touch ./application.yml
-        echo "${{ secrets.APPLICATION }}" > ./application.yml
+        mkdir -p src/main/resources
+        echo "$APPLICATION" > src/main/resources/application.yml
+      env:
+          APPLICATION: ${{ secrets.APPLICATION }}
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
